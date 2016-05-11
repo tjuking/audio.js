@@ -28,27 +28,27 @@ HTML5的音频播放组件，兼容解决iOS系统下自动播放(autoplay)和�
 
 首先需要引入播放组件，默认会产生一个全局变量 - `WebAudio`（如果通过[require.js](http://requirejs.org)或者其它模块管理工具的话，可以不生成全局变量）
 
-    ```js
+```js
     
-    //自动播放和循环播放的模式
-    var bgAudio = new WebAudio({
-        src: "http://www.w3school.com.cn/i/horse.mp3",
-        autoPlay: true,
-        loop: true,
-        duration: 1.5
-    });
+//自动播放和循环播放的模式
+var bgAudio = new WebAudio({
+    src: "http://www.w3school.com.cn/i/horse.mp3",
+    autoPlay: true,
+    loop: true,
+    duration: 1.5
+});
     
-    //按需播放模式
-    var music = new WebAudio({
-        src: "http://www.w3school.com.cn/i/horse.mp3"
-    });
-    //do something ...
-    coin.addEventListener("touchstart", function(){
-        music.load();
-        music.play();
-    }, false);
+//按需播放模式
+var music = new WebAudio({
+    src: "http://www.w3school.com.cn/i/horse.mp3"
+});
+//do something ...
+coin.addEventListener("touchstart", function(){
+    music.load();
+    music.play();
+}, false);
     
-    ```
+```
     
 ### 说明
 
