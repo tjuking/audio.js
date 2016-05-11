@@ -30,23 +30,26 @@ HTML5的音频播放组件，兼容解决iOS系统下自动播放(autoplay)和�
 
 ```js
     
-//自动播放和循环播放的模式
-var bgAudio = new WebAudio({
-    src: "http://www.w3school.com.cn/i/horse.mp3",
-    autoPlay: true,
-    loop: true,
-    duration: 1.5
-});
-    
-//按需播放模式
-var music = new WebAudio({
-    src: "http://www.w3school.com.cn/i/horse.mp3"
-});
-//do something ...
-coin.addEventListener("touchstart", function(){
-    music.load();
-    music.play();
-}, false);
+    //自动播放和循环播放的模式
+    var bgAudio = new WebAudio({
+        src: "http://www.w3school.com.cn/i/horse.mp3",
+        autoPlay: true,
+        loop: true,
+        duration: 1.5
+    });
+        
+    //按需播放模式
+    var music = new WebAudio({
+        src: "http://www.w3school.com.cn/i/horse.mp3",
+        onUpdatetime: function(e){
+            console.log(music.audio.currentTime);
+        }
+    });
+    //do something ...
+    coin.addEventListener("touchstart", function(){
+        music.load();
+        music.play();
+    }, false);
     
 ```
     
